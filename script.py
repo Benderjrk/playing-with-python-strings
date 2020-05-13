@@ -268,3 +268,52 @@ for i in range(len(titles)):
   poem_description_string = "The poem {title} was published by {poet} in {date}".format(poet=poets[i],title=titles[i],date=dates[i])
   print(poem_description_string)
 
+letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+# Write your unique_english_letters function here:
+def unique_english_letters(word):
+  uniques = 0
+  for letter in letters:
+    if letter in word:
+      uniques += 1
+  return uniques
+
+# Uncomment these function calls to test your tip function:
+print(unique_english_letters("mississippi"))
+# should print 4
+print(unique_english_letters("Apple"))
+# should print 4
+
+# Write your count_char_x function here:
+def count_char_x(word, x):
+  number = word.count(x)
+  return number
+# Uncomment these function calls to test your tip function:
+print(count_char_x("mississippi", "s"))
+# should print 4
+print(count_char_x("mississippi", "m"))
+# should print 1
+
+# Write your count_multi_char_x function here:
+def count_multi_char_x(word, x):
+  splits = word.split(x)
+  return(len(splits)-1)
+
+# Uncomment these function calls to test your  function:
+print(count_multi_char_x("mississippi", "iss"))
+# should print 2
+print(count_multi_char_x("apple", "pp"))
+# should print 1
+
+# Write your substring_between_letters function here:
+def substring_between_letters(word, start, end):
+  start_ind = word.find(start)
+  end_ind = word.find(end)
+  if start_ind > -1 and end_ind > -1:
+  	return(word[start_ind+1:end_ind])
+  return word
+
+# Uncomment these function calls to test your tip function:
+print(substring_between_letters("apple", "p", "e"))
+# should print "pl"
+print(substring_between_letters("apple", "p", "c"))
+# should print "apple"
