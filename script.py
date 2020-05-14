@@ -317,3 +317,94 @@ print(substring_between_letters("apple", "p", "e"))
 # should print "pl"
 print(substring_between_letters("apple", "p", "c"))
 # should print "apple"
+
+# Write your x_length_words function here:
+def x_length_words(sentence, x):
+  words = sentence.split(' ')
+  for word in words:
+    if len(word) < x:
+      return False
+  return True
+# Uncomment these function calls to test your tip function:
+print(x_length_words("i like apples", 2))
+# should print False
+print(x_length_words("he likes apples", 2))
+# should print True
+
+
+def word_lowercase(word):
+  return word.lower()
+
+def check_for_name(sentence, name):
+  sanitazed_sentence = word_lowercase(sentence)
+  sanitazed_name = word_lowercase(name)
+  if sanitazed_name in sanitazed_sentence:
+    return True
+  else: 
+    return False
+
+
+# Uncomment these function calls to test your  function:
+print(check_for_name("My name is Jamie", "Jamie"))
+# should print True
+print(check_for_name("My name is jamie", "Jamie"))
+# should print True
+print(check_for_name("My name is Samantha", "Jamie"))
+# should print False
+
+# Write your every_other_letter function here:
+def every_other_letter(word):
+  every_other = ""
+  for i in range(0, len(word), 2):
+    every_other += word[i]
+  return every_other
+
+# Uncomment these function calls to test your tip function:
+print(every_other_letter("Codecademy"))
+# should print Cdcdm
+print(every_other_letter("Hello world!"))
+# should print Hlowrd
+print(every_other_letter(""))
+# should print 
+
+# Write your reverse_string function here:d
+def reverse_string(word):
+  new_word = ""
+  for i in range(len(word) -1, -1, -1):
+    new_word += word[i]
+  return new_word
+# Uncomment these function calls to test your  function:
+print(reverse_string("Codecademy"))
+# should print ymedacedoC
+print(reverse_string("Hello world!"))
+# should print !dlrow olleH
+print(reverse_string(""))
+# should print
+
+# Write your make_spoonerism function here:
+def make_spoonerism(word1, word2):
+  save_word_1 = word1
+  save_word_2 = word2
+  new_word_1 = save_word_1.replace(save_word_1[0],save_word_2[0])
+  new_word_2 = save_word_2.replace(save_word_2[0],save_word_1[0])
+  return "{word1} {word2}".format(word1=new_word_1, word2=new_word_2)
+# Uncomment these function calls to test your function:
+print(make_spoonerism("Codecademy", "Learn"))
+# should print Lodecademy Cearn
+print(make_spoonerism("Hello", "world!"))
+# should print wello Horld!
+print(make_spoonerism("a", "b"))
+# should print b a
+
+# Write your add_exclamation function here:
+def add_exclamation(word):
+  while len(word) < 20:
+    word += "!"
+  else:
+    return word
+# Uncomment these function calls to test your function:
+print(add_exclamation("Codecademy"))
+# should print Codecademy!!!!!!!!!!
+print(add_exclamation("Codecademy is the best place to learn"))
+# should print Codecademy is the best place to learn
+
